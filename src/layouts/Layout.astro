@@ -1,0 +1,69 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="bg-zinc-950 text-zinc-50 scroll-smooth selection:bg-teal-500 selection:text-zinc-900 cursor-none">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body class="font-['Plus_Jakarta_Sans',sans-serif] antialiased overflow-x-hidden">
+		<!-- Magnetic Cursor Element (Increased to w-8 h-8) -->
+		<div id="custom-cursor" class="fixed top-0 left-0 w-8 h-8 bg-teal-400 rounded-full mix-blend-difference pointer-events-none z-[100] -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out"></div>
+		
+		<slot />
+	</body>
+</html>
+
+<script>
+	import { gsap } from 'gsap';
+
+	// Custom Cursor Logic
+	const cursor = document.getElementById('custom-cursor');
+	
+	// Track mouse movement
+	window.addEventListener('mousemove', (e) => {
+		gsap.to(cursor, {
+			x: e.clientX,
+			y: e.clientY,
+			duration: 0.15,
+			ease: 'power2.out'
+		});
+	});
+
+	// Hover effect for interactive elements (links, buttons)
+	const interactables = document.querySelectorAll('a, button');
+	interactables.forEach(el => {
+		el.addEventListener('mouseenter', () => {
+			gsap.to(cursor, { scale: 1.5, backgroundColor: '#ffffff', duration: 0.2 });
+		});
+		el.addEventListener('mouseleave', () => {
+			gsap.to(cursor, { scale: 1, backgroundColor: '#2dd4bf', duration: 0.2 });
+		});
+	});
+</script>
+
+<style is:global>
+	/* Hide default cursor on interactive elements since we have a custom one */
+	a, button { cursor: none; }
+	
+	::-webkit-scrollbar { width: 8px; }
+	::-webkit-scrollbar-track { background: #09090b; }
+	::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+	::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+</style>

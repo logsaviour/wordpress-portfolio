@@ -1,0 +1,43 @@
+---
+// Define the properties this component accepts
+interface Props {
+  id: string;
+  className?: string;
+}
+
+const { id, className = "" } = Astro.props;
+---
+
+<section id={id} class={`min-h-screen flex items-center justify-center px-6 relative reveal-section ${className}`}>
+  <div class="max-w-6xl w-full reveal-content opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+    <slot /> </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  // Register the scroll plugin
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Find all sections we want to animate
+  const sections = document.querySelectorAll('.reveal-section');
+
+  sections.forEach((section) => {
+    const content = section.querySelector('.reveal-content');
+    
+    if (content) {
+      gsap.to(content, {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 75%', // Animation starts when the top of the section hits 75% down your screen
+          toggleActions: 'play none none reverse',
+        }
+      });
+    }
+  });
+</script>
