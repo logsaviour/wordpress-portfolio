@@ -9,27 +9,21 @@ import { LayoutTemplate, MousePointerClick, Gauge, ArrowLeft, ArrowUpRight, Mail
 	title="Ali Hassan | Elementor Visual Architecture" 
 	description="Rapid deployment and high-conversion landing pages built with Elementor Pro."
 >
-	<!-- Background Scroll Watermark -->
 	<div class="fixed top-[20%] left-0 w-[200vw] pointer-events-none z-0 opacity-[0.03]">
 		<h1 id="watermark" class="text-[15rem] font-bold tracking-tighter whitespace-nowrap text-white">
 			ELEMENTOR PRO &nbsp;&nbsp;&nbsp; ELEMENTOR PRO &nbsp;&nbsp;&nbsp; ELEMENTOR PRO &nbsp;&nbsp;&nbsp;
 		</h1>
 	</div>
 
-	<!-- Floating Vertical Architect Badge -->
 	<div class="fixed right-4 top-1/2 -translate-y-1/2 text-zinc-600 tracking-[0.3em] text-[0.65rem] font-mono hidden md:block pointer-events-none z-50 whitespace-nowrap" style="writing-mode: vertical-rl; transform: rotate(180deg);">
 		RAPID DEPLOYMENT // VISUAL BUILDER
 	</div>
 
-	<!-- Fixed Navigation -->
 	<nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center mix-blend-difference">
-		<!-- Top Left: Rotating Circle Logo -->
 		<InteractiveLogo client:load />
 
-		<!-- Top Right: Navigation & Buttons -->
 		<div class="flex gap-6 items-center">
 			
-			<!-- Return to Custom Code Route -->
 			<a href="/" class="hidden lg:flex items-center space-x-2 mr-4 text-sm font-medium text-zinc-400 hover:text-rose-400 transition-colors group">
 				<ArrowLeft class="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
 				<span class="tracking-[0.1em]">Custom Architecture</span>
@@ -44,7 +38,6 @@ import { LayoutTemplate, MousePointerClick, Gauge, ArrowLeft, ArrowUpRight, Mail
 		</div>
 	</nav>
 
-	<!-- Hero Section -->
 	<ScrollSection id="hero" className="border-b border-zinc-900 bg-transparent z-10">
 		<div class="space-y-6 pt-20">
 			<div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono bg-zinc-900 border border-zinc-800 rounded-full text-rose-400">
@@ -59,7 +52,6 @@ import { LayoutTemplate, MousePointerClick, Gauge, ArrowLeft, ArrowUpRight, Mail
 		</div>
 	</ScrollSection>
 
-	<!-- Elementor Strengths Breakdown -->
 	<ScrollSection id="features" className="bg-transparent border-b border-zinc-900 z-10">
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 			<div class="p-8 border border-zinc-900 bg-zinc-950/80 backdrop-blur-md rounded-2xl space-y-4 hover:border-rose-500/50 transition-colors">
@@ -80,14 +72,12 @@ import { LayoutTemplate, MousePointerClick, Gauge, ArrowLeft, ArrowUpRight, Mail
 		</div>
 	</ScrollSection>
 
-	<!-- Elementor Projects Section -->
 	<ScrollSection id="projects" className="bg-transparent z-10 py-24">
 		<div class="w-full space-y-20">
 			<div class="border-b border-zinc-900 pb-6 flex justify-between items-end mb-12">
 				<h2 class="text-3xl font-bold tracking-tight text-white">Elementor Deployments</h2>
 			</div>
 			
-			<!-- Project 1: EMobilize -->
 			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row gap-8 items-center">
 				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-rose-400/50 transition-colors shadow-2xl">
 					<img src="/images/emobilize.jpg" alt="E-Mobilize Auto Key" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
@@ -102,7 +92,6 @@ import { LayoutTemplate, MousePointerClick, Gauge, ArrowLeft, ArrowUpRight, Mail
 				</div>
 			</div>
 
-			<!-- Project 2: Just Money Wize -->
 			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row-reverse gap-8 items-center mt-4">
 				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-pink-400/50 transition-colors shadow-2xl">
 					<img src="/images/moneywize.jpg" alt="Just Money Wize" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
@@ -117,7 +106,6 @@ import { LayoutTemplate, MousePointerClick, Gauge, ArrowLeft, ArrowUpRight, Mail
 				</div>
 			</div>
 
-			<!-- Project 3: A1 Locksmith DMV -->
 			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row gap-8 items-center mt-4">
 				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-purple-400/50 transition-colors shadow-2xl">
 					<img src="/images/a1locksmith.jpg" alt="A1 Locksmith DMV" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
@@ -132,7 +120,6 @@ import { LayoutTemplate, MousePointerClick, Gauge, ArrowLeft, ArrowUpRight, Mail
 				</div>
 			</div>
 
-			<!-- Project 4: Freelance Agent -->
 			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row-reverse gap-8 items-center mt-4">
 				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-fuchsia-400/50 transition-colors shadow-2xl">
 					<img src="/images/freelance-agent.jpg" alt="Freelance Agent" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
@@ -147,7 +134,6 @@ import { LayoutTemplate, MousePointerClick, Gauge, ArrowLeft, ArrowUpRight, Mail
 				</div>
 			</div>
 
-			<!-- Project 5: NC Limos -->
 			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row gap-8 items-center mt-4">
 				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-cyan-400/50 transition-colors shadow-2xl">
 					<img src="/images/nclimos.jpg" alt="NC Limos" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
