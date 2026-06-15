@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import InteractiveLogo from '../components/InteractiveLogo';
 import ScrollSection from '../components/ScrollSection.astro';
-import { LayoutTemplate, Zap, Database, ArrowUpRight, Mail, Eye } from 'lucide-react';
+import { LayoutTemplate, Zap, Database, ArrowUpRight, Mail } from 'lucide-react';
 ---
 
 <Layout 
@@ -23,14 +23,29 @@ import { LayoutTemplate, Zap, Database, ArrowUpRight, Mail, Eye } from 'lucide-r
 		<InteractiveLogo client:load />
 
 		<div class="flex gap-6 items-center">
-			<a href="/elementor" class="magnetic-btn hidden lg:flex items-center space-x-2 mr-4 text-sm font-medium text-zinc-400 hover:text-teal-400 transition-colors group">
+			
+			<div id="brand-name" class="hidden lg:flex items-center space-x-[2px] mr-6 cursor-pointer overflow-hidden">
+				<span class="name-char text-white font-bold tracking-[0.15em] text-sm">A</span>
+				<span class="name-char text-white font-bold tracking-[0.15em] text-sm">L</span>
+				<span class="name-char text-white font-bold tracking-[0.15em] text-sm">I</span>
+				<span class="w-3"></span> <span class="name-char text-white font-bold tracking-[0.15em] text-sm">H</span>
+				<span class="name-char text-white font-bold tracking-[0.15em] text-sm">A</span>
+				<span class="name-char text-white font-bold tracking-[0.15em] text-sm">S</span>
+				<span class="name-char text-white font-bold tracking-[0.15em] text-sm">S</span>
+				<span class="name-char text-white font-bold tracking-[0.15em] text-sm">A</span>
+				<span class="name-char text-white font-bold tracking-[0.15em] text-sm">N</span>
+			</div>
+
+			<!-- Elementor Route Added Here -->
+			<a href="/elementor" class="hidden lg:flex items-center space-x-2 mr-4 text-sm font-medium text-zinc-400 hover:text-teal-400 transition-colors group">
 				<span class="tracking-[0.1em]">Elementor Architecture</span>
-				<ArrowUpRight class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
 			</a>
-			<a href="mailto:aliha85234@gmail.com" class="magnetic-btn text-sm font-medium text-zinc-400 hover:text-white transition-colors flex items-center gap-2 hidden sm:flex">
+
+			<a href="mailto:aliha85234@gmail.com" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors flex items-center gap-2 hidden sm:flex">
 				<Mail class="w-4 h-4" /> Let's Talk
 			</a>
-			<a href="https://www.upwork.com/freelancers/~013d2ca8734e3f8ffc?mp_source=share" target="_blank" rel="noreferrer" class="magnetic-btn px-4 py-2 bg-teal-500 hover:bg-teal-400 text-zinc-950 text-sm font-bold rounded-full transition-colors">
+			<a href="https://www.upwork.com/freelancers/~013d2ca8734e3f8ffc?mp_source=share" target="_blank" rel="noreferrer" class="px-4 py-2 bg-teal-500 hover:bg-teal-400 text-zinc-950 text-sm font-bold rounded-full transition-colors">
 				Hire on Upwork
 			</a>
 		</div>
@@ -38,28 +53,20 @@ import { LayoutTemplate, Zap, Database, ArrowUpRight, Mail, Eye } from 'lucide-r
 
 	<ScrollSection id="hero" className="border-b border-zinc-900 bg-transparent z-10">
 		<div class="space-y-6 pt-20">
-			<div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono bg-zinc-900 border border-zinc-800 rounded-full text-teal-400 overflow-hidden">
-				<span class="hero-reveal-element flex items-center gap-2">
-					<span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span> Available on Upwork
-				</span>
+			<div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono bg-zinc-900 border border-zinc-800 rounded-full text-teal-400">
+				<span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span> Available on Upwork
 			</div>
-			
 			<h1 class="text-5xl md:text-8xl font-bold tracking-tight bg-gradient-to-r from-zinc-100 via-zinc-400 to-zinc-600 bg-clip-text text-transparent">
-				<div class="overflow-hidden"><span class="block hero-text-line">Custom WordPress</span></div>
-				<div class="overflow-hidden"><span class="block hero-text-line">Architecture.</span></div>
+				Custom WordPress <br/> Architecture.
 			</h1>
-			
-			<div class="overflow-hidden max-w-xl">
-				<p class="hero-reveal-element text-zinc-400 text-lg font-light leading-relaxed">
-					Hi, I'm Ali Hassan. I engineer high-performance headless WordPress themes and custom frontend ecosystems that load instantly and scale globally.
-				</p>
-			</div>
+			<p class="text-zinc-400 max-w-xl text-lg font-light leading-relaxed">
+				Hi, I'm Ali Hassan. I engineer high-performance headless WordPress themes and custom frontend ecosystems that load instantly and scale globally.
+			</p>
 		</div>
 	</ScrollSection>
 
 	<ScrollSection id="architecture" className="bg-transparent border-b border-zinc-900 z-10">
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-			<!-- Architecture Features (Unchanged structure, retaining data) -->
 			<div class="p-8 border border-zinc-900 bg-zinc-950/80 backdrop-blur-md rounded-2xl space-y-4 hover:border-teal-500/50 transition-colors">
 				<LayoutTemplate class="w-8 h-8 text-sky-400" />
 				<h3 class="text-xl font-semibold text-white">Custom Theme Dev</h3>
@@ -79,42 +86,120 @@ import { LayoutTemplate, Zap, Database, ArrowUpRight, Mail, Eye } from 'lucide-r
 	</ScrollSection>
 
 	<ScrollSection id="projects" className="bg-transparent z-10 py-24">
-		<div class="w-full space-y-24">
-			<div class="border-b border-zinc-900 pb-6 mb-12">
+		<div class="w-full space-y-20">
+			<div class="border-b border-zinc-900 pb-6 flex justify-between items-end mb-12">
 				<h2 class="text-3xl font-bold tracking-tight text-white">Featured Deployments</h2>
 			</div>
 			
-			<!-- Project 1 -->
-			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 hover:border-teal-900/50 transition-all duration-500 flex flex-col md:flex-row gap-12 items-center">
-				<a href="https://atelierdesignny.com/" target="_blank" class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-teal-500/80 transition-all duration-500 shadow-2xl block cursor-none">
+			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row gap-8 items-center">
+				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-teal-500/50 transition-colors shadow-2xl">
 					<img src="/images/atelier.jpg" alt="Atelier Design NY" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
-					<div class="absolute inset-0 bg-zinc-950/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-10">
-						<span class="px-5 py-2.5 bg-zinc-900/90 border border-teal-500/50 rounded-full text-white text-sm font-medium flex items-center gap-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-							<Eye class="w-4 h-4 text-teal-400" /> View Deployment
-						</span>
-					</div>
-				</a>
+				</div>
 				<div class="w-full md:w-1/2 space-y-4">
-					<span class="text-xs font-mono text-teal-400 tracking-wider">CREATIVE AGENCY UI</span>
-					<h4 class="text-3xl md:text-4xl font-bold text-zinc-100">Atelier Design NY</h4>
-					<p class="text-zinc-400 text-sm md:text-base leading-relaxed">A high-fidelity, pixel-perfect custom WordPress build for a New York design firm. Focused on fluid typography, advanced media handling, and a zero-clutter admin backend.</p>
+					<span class="text-xs font-mono text-teal-400">CREATIVE AGENCY UI</span>
+					<h4 class="text-3xl font-bold text-zinc-100">Atelier Design NY</h4>
+					<p class="text-zinc-400 text-sm leading-relaxed">A high-fidelity, pixel-perfect custom WordPress build for a New York design firm. Focused on fluid typography, advanced media handling, and a zero-clutter admin backend.</p>
+					<a href="https://atelierdesignny.com/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-white font-medium hover:text-teal-400 transition-colors mt-4">
+						View Live Site <ArrowUpRight class="w-4 h-4" />
+					</a>
 				</div>
 			</div>
 
-			<!-- Project 2 -->
-			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 hover:border-sky-900/50 transition-all duration-500 flex flex-col md:flex-row-reverse gap-12 items-center">
-				<a href="https://candihealth.com/" target="_blank" class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-sky-500/80 transition-all duration-500 shadow-2xl block cursor-none">
+			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row-reverse gap-8 items-center mt-4">
+				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-sky-400/50 transition-colors shadow-2xl">
 					<img src="/images/candi.jpg" alt="Candi Health" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
-					<div class="absolute inset-0 bg-zinc-950/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-10">
-						<span class="px-5 py-2.5 bg-zinc-900/90 border border-sky-500/50 rounded-full text-white text-sm font-medium flex items-center gap-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-							<Eye class="w-4 h-4 text-sky-400" /> View Deployment
-						</span>
-					</div>
-				</a>
+				</div>
 				<div class="w-full md:w-1/2 space-y-4">
-					<span class="text-xs font-mono text-sky-400 tracking-wider">HEALTHCARE INFRASTRUCTURE</span>
-					<h4 class="text-3xl md:text-4xl font-bold text-zinc-100">Candi Health</h4>
-					<p class="text-zinc-400 text-sm md:text-base leading-relaxed">A secure, highly professional corporate architecture designed for the healthcare sector. Engineered for high accessibility scores, rapid load times, and seamless user routing.</p>
+					<span class="text-xs font-mono text-sky-400">HEALTHCARE INFRASTRUCTURE</span>
+					<h4 class="text-3xl font-bold text-zinc-100">Candi Health</h4>
+					<p class="text-zinc-400 text-sm leading-relaxed">A secure, highly professional corporate architecture designed for the healthcare sector. Engineered for high accessibility scores, rapid load times, and seamless user routing.</p>
+					<a href="https://candihealth.com/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-white font-medium hover:text-sky-400 transition-colors mt-4">
+						View Live Site <ArrowUpRight class="w-4 h-4" />
+					</a>
+				</div>
+			</div>
+
+			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row gap-8 items-center mt-4">
+				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-purple-400/50 transition-colors shadow-2xl">
+					<img src="/images/estate.jpg" alt="Estate Law Atlanta" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
+				</div>
+				<div class="w-full md:w-1/2 space-y-4">
+					<span class="text-xs font-mono text-purple-400">LEAD GENERATION & LEGAL</span>
+					<h4 class="text-3xl font-bold text-zinc-100">Estate Law Atlanta</h4>
+					<p class="text-zinc-400 text-sm leading-relaxed">A high-conversion custom theme built to drive trust and client acquisition. Integrates dynamic contact structures and localized SEO optimization directly into the theme layer.</p>
+					<a href="https://estatelawatlanta.com/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-white font-medium hover:text-purple-400 transition-colors mt-4">
+						View Live Site <ArrowUpRight class="w-4 h-4" />
+					</a>
+				</div>
+			</div>
+
+			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row-reverse gap-8 items-center mt-4">
+				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-rose-400/50 transition-colors shadow-2xl">
+					<img src="/images/breaking.jpg" alt="Breaking the Cycle" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
+				</div>
+				<div class="w-full md:w-1/2 space-y-4">
+					<span class="text-xs font-mono text-rose-400">NON-PROFIT PORTAL</span>
+					<h4 class="text-3xl font-bold text-zinc-100">Breaking the Cycle</h4>
+					<p class="text-zinc-400 text-sm leading-relaxed">Accessible, impact-driven web architecture for foster care advocacy. Built with intuitive content management capabilities to empower organizational teams without technical overhead.</p>
+					<a href="https://breakingthecycle-fostercare.org/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-white font-medium hover:text-rose-400 transition-colors mt-4">
+						View Live Site <ArrowUpRight class="w-4 h-4" />
+					</a>
+				</div>
+			</div>
+
+			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row gap-8 items-center mt-4">
+				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-yellow-400/50 transition-colors shadow-2xl">
+					<img src="/images/ssadvertise.jpg" alt="SS Advertise" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
+				</div>
+				<div class="w-full md:w-1/2 space-y-4">
+					<span class="text-xs font-mono text-yellow-400">MARKETING AGENCY</span>
+					<h4 class="text-3xl font-bold text-zinc-100">SS Advertise</h4>
+					<p class="text-zinc-400 text-sm leading-relaxed">A bold, highly interactive corporate profile designed to showcase marketing services. Engineered for rapid Largest Contentful Paint (LCP) times to maximize ad conversion retention.</p>
+					<a href="https://www.ssadvertise.com/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-white font-medium hover:text-yellow-400 transition-colors mt-4">
+						View Live Site <ArrowUpRight class="w-4 h-4" />
+					</a>
+				</div>
+			</div>
+
+			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row-reverse gap-8 items-center mt-4">
+				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-indigo-400/50 transition-colors shadow-2xl">
+					<img src="/images/elevated.jpg" alt="Elevated Video Solutions" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
+				</div>
+				<div class="w-full md:w-1/2 space-y-4">
+					<span class="text-xs font-mono text-indigo-400">MEDIA PRODUCTION</span>
+					<h4 class="text-3xl font-bold text-zinc-100">Elevated Video Solutions</h4>
+					<p class="text-zinc-400 text-sm leading-relaxed">A media-heavy custom WordPress environment optimized for high-definition video backgrounds and portfolio galleries, utilizing aggressive lazy-loading techniques.</p>
+					<a href="https://elevatedvideosolutions.com/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-white font-medium hover:text-indigo-400 transition-colors mt-4">
+						View Live Site <ArrowUpRight class="w-4 h-4" />
+					</a>
+				</div>
+			</div>
+
+			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row gap-8 items-center mt-4">
+				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-emerald-400/50 transition-colors shadow-2xl">
+					<img src="/images/donatefy.jpg" alt="Donatefy" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
+				</div>
+				<div class="w-full md:w-1/2 space-y-4">
+					<span class="text-xs font-mono text-emerald-400">FINTECH INTEGRATION</span>
+					<h4 class="text-3xl font-bold text-zinc-100">Donatefy</h4>
+					<p class="text-zinc-400 text-sm leading-relaxed">Secure data structuring for non-profit donation streams. Features bespoke Custom Post Types (CPTs) and seamless payment gateway integrations managed within the WP dashboard.</p>
+					<a href="https://www.donatefy.org/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-white font-medium hover:text-emerald-400 transition-colors mt-4">
+						View Live Site <ArrowUpRight class="w-4 h-4" />
+					</a>
+				</div>
+			</div>
+
+			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row-reverse gap-8 items-center mt-4">
+				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-blue-400/50 transition-colors shadow-2xl">
+					<img src="/images/americloud.jpg" alt="AmeriCloud Telecom" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
+				</div>
+				<div class="w-full md:w-1/2 space-y-4">
+					<span class="text-xs font-mono text-blue-400">B2B CORPORATE</span>
+					<h4 class="text-3xl font-bold text-zinc-100">AmeriCloud Telecom</h4>
+					<p class="text-zinc-400 text-sm leading-relaxed">Enterprise-grade architecture for telecommunications. Built to scale with complex B2B service offerings, utilizing rigorous structural hierarchies for maximum SEO indexability.</p>
+					<a href="https://telecom.americloudmarketing.com/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-white font-medium hover:text-blue-400 transition-colors mt-4">
+						View Live Site <ArrowUpRight class="w-4 h-4" />
+					</a>
 				</div>
 			</div>
 
@@ -128,54 +213,72 @@ import { LayoutTemplate, Zap, Database, ArrowUpRight, Mail, Eye } from 'lucide-r
 
 	gsap.registerPlugin(ScrollTrigger);
 
-	document.addEventListener('astro:page-load', () => {
-		// Kill existing triggers to prevent memory leaks on SPA routing
-		ScrollTrigger.getAll().forEach(t => t.kill());
+	// Watermark Parallax Logic
+	const watermark = document.getElementById('watermark');
+	if (watermark) {
+		gsap.to(watermark, {
+			xPercent: -50,
+			ease: "none",
+			scrollTrigger: {
+				trigger: document.body,
+				start: "top top",
+				end: "bottom bottom",
+				scrub: 1, 
+			}
+		});
+	}
 
-		// 1. Watermark Parallax Logic
-		const watermark = document.getElementById('watermark');
-		if (watermark) {
-			gsap.to(watermark, {
-				xPercent: -50,
+	// 1. Initial Load Drop-in Animation for the Name
+	gsap.fromTo(".name-char", 
+		{ y: -20, opacity: 0 },
+		{ y: 0, opacity: 1, duration: 0.6, stagger: 0.05, ease: "power3.out", delay: 0.5 }
+	);
+
+	// 2. Hover Wave Animation for the Name
+	const brandName = document.getElementById('brand-name');
+	if (brandName) {
+		brandName.addEventListener('mouseenter', () => {
+			gsap.to(".name-char", {
+				y: -6,
+				color: "#2dd4bf", // Flashes teal
+				stagger: 0.04,
+				duration: 0.2,
+				yoyo: true,
+				repeat: 1,
+				ease: "power2.out"
+			});
+		});
+	}
+
+	// Staggered Scatter & Scrub Logic for Project Cards
+	const projectCards = document.querySelectorAll('.project-card');
+	
+	projectCards.forEach((card, index) => {
+		const xOffset = index % 2 === 0 ? 100 : -100;
+		const rotOffset = index % 2 === 0 ? 8 : -8;
+
+		gsap.fromTo(card, 
+			{ 
+				opacity: 0, 
+				y: 200, 
+				x: xOffset, 
+				rotation: rotOffset,
+				scale: 0.95
+			},
+			{
+				opacity: 1,
+				y: 0,
+				x: 0,
+				rotation: 0,
+				scale: 1,
 				ease: "none",
 				scrollTrigger: {
-					trigger: document.body,
-					start: "top top",
-					end: "bottom bottom",
-					scrub: 1, 
+					trigger: card,
+					start: "top 95%", 
+					end: "top 65%",   
+					scrub: 1 
 				}
-			});
-		}
-
-		// 2. Advanced Hero Text Mask-Up Reveal Timeline
-		const heroTl = gsap.timeline();
-		heroTl.fromTo(".hero-text-line", 
-			{ y: 100, opacity: 0, skewY: 5 },
-			{ y: 0, opacity: 1, skewY: 0, duration: 1.2, stagger: 0.15, ease: "power4.out", delay: 0.2 }
-		).fromTo(".hero-reveal-element",
-			{ y: 20, opacity: 0 },
-			{ y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power2.out" },
-			"-=0.8"
+			}
 		);
-
-		// 3. Staggered Scatter & Scrub Logic for Project Cards
-		const projectCards = document.querySelectorAll('.project-card');
-		projectCards.forEach((card, index) => {
-			const xOffset = index % 2 === 0 ? 50 : -50;
-
-			gsap.fromTo(card, 
-				{ opacity: 0, y: 150, x: xOffset, scale: 0.98 },
-				{
-					opacity: 1, y: 0, x: 0, scale: 1,
-					ease: "power2.out",
-					scrollTrigger: {
-						trigger: card,
-						start: "top 90%", 
-						end: "top 60%",   
-						scrub: 1 
-					}
-				}
-			);
-		});
 	});
 </script>

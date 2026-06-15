@@ -2,60 +2,64 @@
 import Layout from '../layouts/Layout.astro';
 import InteractiveLogo from '../components/InteractiveLogo';
 import ScrollSection from '../components/ScrollSection.astro';
-import { LayoutTemplate, MousePointerClick, Gauge, ArrowLeft, Mail, Eye } from 'lucide-react';
+import { LayoutTemplate, MousePointerClick, Gauge, ArrowLeft, ArrowUpRight, Mail } from 'lucide-react';
 ---
 
 <Layout 
 	title="Ali Hassan | Elementor Visual Architecture" 
 	description="Rapid deployment and high-conversion landing pages built with Elementor Pro."
 >
+	<!-- Background Scroll Watermark -->
 	<div class="fixed top-[20%] left-0 w-[200vw] pointer-events-none z-0 opacity-[0.03]">
 		<h1 id="watermark" class="text-[15rem] font-bold tracking-tighter whitespace-nowrap text-white">
 			ELEMENTOR PRO &nbsp;&nbsp;&nbsp; ELEMENTOR PRO &nbsp;&nbsp;&nbsp; ELEMENTOR PRO &nbsp;&nbsp;&nbsp;
 		</h1>
 	</div>
 
+	<!-- Floating Vertical Architect Badge -->
 	<div class="fixed right-4 top-1/2 -translate-y-1/2 text-zinc-600 tracking-[0.3em] text-[0.65rem] font-mono hidden md:block pointer-events-none z-50 whitespace-nowrap" style="writing-mode: vertical-rl; transform: rotate(180deg);">
 		RAPID DEPLOYMENT // VISUAL BUILDER
 	</div>
 
+	<!-- Fixed Navigation -->
 	<nav class="fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center mix-blend-difference">
+		<!-- Top Left: Rotating Circle Logo -->
 		<InteractiveLogo client:load />
 
+		<!-- Top Right: Navigation & Buttons -->
 		<div class="flex gap-6 items-center">
-			<a href="/" class="magnetic-btn hidden lg:flex items-center space-x-2 mr-4 text-sm font-medium text-zinc-400 hover:text-rose-400 transition-colors group">
+			
+			<!-- Return to Custom Code Route -->
+			<a href="/" class="hidden lg:flex items-center space-x-2 mr-4 text-sm font-medium text-zinc-400 hover:text-rose-400 transition-colors group">
 				<ArrowLeft class="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
 				<span class="tracking-[0.1em]">Custom Architecture</span>
 			</a>
 
-			<a href="mailto:aliha85234@gmail.com" class="magnetic-btn text-sm font-medium text-zinc-400 hover:text-white transition-colors flex items-center gap-2 hidden sm:flex">
+			<a href="mailto:aliha85234@gmail.com" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors flex items-center gap-2 hidden sm:flex">
 				<Mail class="w-4 h-4" /> Let's Talk
 			</a>
-			<a href="https://www.upwork.com/freelancers/~013d2ca8734e3f8ffc?mp_source=share" target="_blank" rel="noreferrer" class="magnetic-btn px-4 py-2 bg-rose-500 hover:bg-rose-400 text-zinc-950 text-sm font-bold rounded-full transition-colors">
+			<a href="https://www.upwork.com/freelancers/~013d2ca8734e3f8ffc?mp_source=share" target="_blank" rel="noreferrer" class="px-4 py-2 bg-rose-500 hover:bg-rose-400 text-zinc-950 text-sm font-bold rounded-full transition-colors">
 				Hire on Upwork
 			</a>
 		</div>
 	</nav>
 
+	<!-- Hero Section -->
 	<ScrollSection id="hero" className="border-b border-zinc-900 bg-transparent z-10">
 		<div class="space-y-6 pt-20">
-			<div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono bg-zinc-900 border border-zinc-800 rounded-full text-rose-400 overflow-hidden">
-				<span class="hero-reveal-element flex items-center gap-2">
-					<span class="w-2 h-2 rounded-full bg-rose-400 animate-pulse"></span> Visual Builder Track
-				</span>
+			<div class="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono bg-zinc-900 border border-zinc-800 rounded-full text-rose-400">
+				<span class="w-2 h-2 rounded-full bg-rose-400 animate-pulse"></span> Visual Builder Track
 			</div>
 			<h1 class="text-5xl md:text-8xl font-bold tracking-tight bg-gradient-to-r from-zinc-100 via-rose-300 to-rose-600 bg-clip-text text-transparent">
-				<div class="overflow-hidden"><span class="block hero-text-line">Visual</span></div>
-				<div class="overflow-hidden"><span class="block hero-text-line">Architecture.</span></div>
+				Visual <br/> Architecture.
 			</h1>
-			<div class="overflow-hidden max-w-xl">
-				<p class="hero-reveal-element text-zinc-400 text-lg font-light leading-relaxed">
-					Rapid development, pixel-perfect layouts, and high-conversion landing pages engineered using Elementor Pro. Delivering marketing-ready websites in half the time.
-				</p>
-			</div>
+			<p class="text-zinc-400 max-w-xl text-lg font-light leading-relaxed">
+				Rapid development, pixel-perfect layouts, and high-conversion landing pages engineered using Elementor Pro. Delivering marketing-ready websites in half the time.
+			</p>
 		</div>
 	</ScrollSection>
 
+	<!-- Elementor Strengths Breakdown -->
 	<ScrollSection id="features" className="bg-transparent border-b border-zinc-900 z-10">
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 			<div class="p-8 border border-zinc-900 bg-zinc-950/80 backdrop-blur-md rounded-2xl space-y-4 hover:border-rose-500/50 transition-colors">
@@ -76,43 +80,85 @@ import { LayoutTemplate, MousePointerClick, Gauge, ArrowLeft, Mail, Eye } from '
 		</div>
 	</ScrollSection>
 
+	<!-- Elementor Projects Section -->
 	<ScrollSection id="projects" className="bg-transparent z-10 py-24">
-		<div class="w-full space-y-24">
-			<div class="border-b border-zinc-900 pb-6 mb-12">
+		<div class="w-full space-y-20">
+			<div class="border-b border-zinc-900 pb-6 flex justify-between items-end mb-12">
 				<h2 class="text-3xl font-bold tracking-tight text-white">Elementor Deployments</h2>
 			</div>
 			
 			<!-- Project 1: EMobilize -->
-			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 hover:border-rose-900/50 transition-all duration-500 flex flex-col md:flex-row gap-12 items-center">
-				<a href="https://emobilizeautokey.com/" target="_blank" class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-rose-500/80 transition-all duration-500 shadow-2xl block cursor-none">
+			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row gap-8 items-center">
+				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-rose-400/50 transition-colors shadow-2xl">
 					<img src="/images/emobilize.jpg" alt="E-Mobilize Auto Key" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
-					<div class="absolute inset-0 bg-zinc-950/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-10">
-						<span class="px-5 py-2.5 bg-zinc-900/90 border border-rose-500/50 rounded-full text-white text-sm font-medium flex items-center gap-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-							<Eye class="w-4 h-4 text-rose-400" /> View Deployment
-						</span>
-					</div>
-				</a>
+				</div>
 				<div class="w-full md:w-1/2 space-y-4">
-					<span class="text-xs font-mono text-rose-400 tracking-wider">AUTOMOTIVE SERVICES</span>
-					<h4 class="text-3xl md:text-4xl font-bold text-zinc-100">E-Mobilize Auto Key</h4>
-					<p class="text-zinc-400 text-sm md:text-base leading-relaxed">A specialized service portal built with Elementor. Focused on rapid local SEO routing, click-to-call mobile optimization, and immediate lead capture for emergency automotive services.</p>
+					<span class="text-xs font-mono text-rose-400">AUTOMOTIVE SERVICES</span>
+					<h4 class="text-3xl font-bold text-zinc-100">E-Mobilize Auto Key</h4>
+					<p class="text-zinc-400 text-sm leading-relaxed">A specialized service portal built with Elementor. Focused on rapid local SEO routing, click-to-call mobile optimization, and immediate lead capture for emergency automotive services.</p>
+					<a href="https://emobilizeautokey.com/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-white font-medium hover:text-rose-400 transition-colors mt-4">
+						View Live Site <ArrowUpRight class="w-4 h-4" />
+					</a>
 				</div>
 			</div>
 
 			<!-- Project 2: Just Money Wize -->
-			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 hover:border-pink-900/50 transition-all duration-500 flex flex-col md:flex-row-reverse gap-12 items-center">
-				<a href="https://justmoneywize.com/" target="_blank" class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-pink-500/80 transition-all duration-500 shadow-2xl block cursor-none">
+			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row-reverse gap-8 items-center mt-4">
+				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-pink-400/50 transition-colors shadow-2xl">
 					<img src="/images/moneywize.jpg" alt="Just Money Wize" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
-					<div class="absolute inset-0 bg-zinc-950/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-10">
-						<span class="px-5 py-2.5 bg-zinc-900/90 border border-pink-500/50 rounded-full text-white text-sm font-medium flex items-center gap-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-							<Eye class="w-4 h-4 text-pink-400" /> View Deployment
-						</span>
-					</div>
-				</a>
+				</div>
 				<div class="w-full md:w-1/2 space-y-4">
-					<span class="text-xs font-mono text-pink-400 tracking-wider">FINANCIAL CONSULTING</span>
-					<h4 class="text-3xl md:text-4xl font-bold text-zinc-100">Just Money Wize</h4>
-					<p class="text-zinc-400 text-sm md:text-base leading-relaxed">A professional financial services architecture utilizing Elementor's strict global design system to maintain trust, authority, and brand consistency across client intake flows.</p>
+					<span class="text-xs font-mono text-pink-400">FINANCIAL CONSULTING</span>
+					<h4 class="text-3xl font-bold text-zinc-100">Just Money Wize</h4>
+					<p class="text-zinc-400 text-sm leading-relaxed">A professional financial services architecture utilizing Elementor's strict global design system to maintain trust, authority, and brand consistency across client intake flows.</p>
+					<a href="https://justmoneywize.com/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-white font-medium hover:text-pink-400 transition-colors mt-4">
+						View Live Site <ArrowUpRight class="w-4 h-4" />
+					</a>
+				</div>
+			</div>
+
+			<!-- Project 3: A1 Locksmith DMV -->
+			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row gap-8 items-center mt-4">
+				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-purple-400/50 transition-colors shadow-2xl">
+					<img src="/images/a1locksmith.jpg" alt="A1 Locksmith DMV" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
+				</div>
+				<div class="w-full md:w-1/2 space-y-4">
+					<span class="text-xs font-mono text-purple-400">LOCAL BUSINESS ROUTING</span>
+					<h4 class="text-3xl font-bold text-zinc-100">A1 Locksmith DMV</h4>
+					<p class="text-zinc-400 text-sm leading-relaxed">High-conversion landing page structured for local ad traffic. Built visually to allow the client to update service areas and promotional offers without touching the codebase.</p>
+					<a href="https://a1locksmithdmv.com/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-white font-medium hover:text-purple-400 transition-colors mt-4">
+						View Live Site <ArrowUpRight class="w-4 h-4" />
+					</a>
+				</div>
+			</div>
+
+			<!-- Project 4: Freelance Agent -->
+			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row-reverse gap-8 items-center mt-4">
+				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-fuchsia-400/50 transition-colors shadow-2xl">
+					<img src="/images/freelance-agent.jpg" alt="Freelance Agent" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
+				</div>
+				<div class="w-full md:w-1/2 space-y-4">
+					<span class="text-xs font-mono text-fuchsia-400">B2B AGENCY PORTAL</span>
+					<h4 class="text-3xl font-bold text-zinc-100">Freelance Agent</h4>
+					<p class="text-zinc-400 text-sm leading-relaxed">A modern, sleek agency frontend deployed via Elementor Pro. Engineered with dynamic visual hierarchy to effectively present service tiers and capture B2B client inquiries.</p>
+					<a href="https://freelance-agent.com/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-white font-medium hover:text-fuchsia-400 transition-colors mt-4">
+						View Live Site <ArrowUpRight class="w-4 h-4" />
+					</a>
+				</div>
+			</div>
+
+			<!-- Project 5: NC Limos -->
+			<div class="project-card group border border-zinc-900 p-8 rounded-2xl bg-zinc-950/80 backdrop-blur-md hover:bg-zinc-900/50 transition-all flex flex-col md:flex-row gap-8 items-center mt-4">
+				<div class="w-full md:w-1/2 bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden relative group-hover:border-cyan-400/50 transition-colors shadow-2xl">
+					<img src="/images/nclimos.jpg" alt="NC Limos" class="w-full h-auto object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
+				</div>
+				<div class="w-full md:w-1/2 space-y-4">
+					<span class="text-xs font-mono text-cyan-400">LUXURY TRANSPORTATION</span>
+					<h4 class="text-3xl font-bold text-zinc-100">NC Limos</h4>
+					<p class="text-zinc-400 text-sm leading-relaxed">A premium visual identity designed for the luxury transport sector. Utilizes Elementor's advanced media integrations to showcase high-end fleet galleries and booking systems.</p>
+					<a href="https://nclimos.com/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 text-white font-medium hover:text-cyan-400 transition-colors mt-4">
+						View Live Site <ArrowUpRight class="w-4 h-4" />
+					</a>
 				</div>
 			</div>
 
@@ -126,50 +172,50 @@ import { LayoutTemplate, MousePointerClick, Gauge, ArrowLeft, Mail, Eye } from '
 
 	gsap.registerPlugin(ScrollTrigger);
 
-	document.addEventListener('astro:page-load', () => {
-		ScrollTrigger.getAll().forEach(t => t.kill());
+	// Watermark Parallax Logic
+	const watermark = document.getElementById('watermark');
+	if (watermark) {
+		gsap.to(watermark, {
+			xPercent: -50,
+			ease: "none",
+			scrollTrigger: {
+				trigger: document.body,
+				start: "top top",
+				end: "bottom bottom",
+				scrub: 1, 
+			}
+		});
+	}
 
-		const watermark = document.getElementById('watermark');
-		if (watermark) {
-			gsap.to(watermark, {
-				xPercent: -50,
+	// Staggered Scatter & Scrub Logic for Project Cards
+	const projectCards = document.querySelectorAll('.project-card');
+	
+	projectCards.forEach((card, index) => {
+		const xOffset = index % 2 === 0 ? 100 : -100;
+		const rotOffset = index % 2 === 0 ? 8 : -8;
+
+		gsap.fromTo(card, 
+			{ 
+				opacity: 0, 
+				y: 200, 
+				x: xOffset, 
+				rotation: rotOffset,
+				scale: 0.95
+			},
+			{
+				opacity: 1,
+				y: 0,
+				x: 0,
+				rotation: 0,
+				scale: 1,
 				ease: "none",
 				scrollTrigger: {
-					trigger: document.body,
-					start: "top top",
-					end: "bottom bottom",
-					scrub: 1, 
+					trigger: card,
+					start: "top 95%", 
+					end: "top 65%",   
+					scrub: 1 
 				}
-			});
-		}
-
-		const heroTl = gsap.timeline();
-		heroTl.fromTo(".hero-text-line", 
-			{ y: 100, opacity: 0, skewY: 5 },
-			{ y: 0, opacity: 1, skewY: 0, duration: 1.2, stagger: 0.15, ease: "power4.out", delay: 0.2 }
-		).fromTo(".hero-reveal-element",
-			{ y: 20, opacity: 0 },
-			{ y: 0, opacity: 1, duration: 0.8, stagger: 0.1, ease: "power2.out" },
-			"-=0.8"
+			}
 		);
-
-		const projectCards = document.querySelectorAll('.project-card');
-		projectCards.forEach((card, index) => {
-			const xOffset = index % 2 === 0 ? 50 : -50;
-
-			gsap.fromTo(card, 
-				{ opacity: 0, y: 150, x: xOffset, scale: 0.98 },
-				{
-					opacity: 1, y: 0, x: 0, scale: 1,
-					ease: "power2.out",
-					scrollTrigger: {
-						trigger: card,
-						start: "top 90%", 
-						end: "top 60%",   
-						scrub: 1 
-					}
-				}
-			);
-		});
 	});
 </script>

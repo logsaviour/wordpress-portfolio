@@ -1,5 +1,5 @@
 ---
-import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
 
 interface Props {
 	title: string;
@@ -10,7 +10,7 @@ const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="bg-zinc-950 text-zinc-50 overflow-x-hidden selection:bg-teal-500/30 scroll-smooth">
+<html lang="en" class="bg-zinc-950 text-zinc-50 scroll-smooth selection:bg-teal-500 selection:text-zinc-900 cursor-none">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
@@ -18,72 +18,52 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		
-		<ClientRouter />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	</head>
-	<body class="antialiased min-h-screen flex flex-col">
+	<body class="font-['Plus_Jakarta_Sans',sans-serif] antialiased overflow-x-hidden">
+		<!-- Magnetic Cursor Element (Increased to w-8 h-8) -->
+		<div id="custom-cursor" class="fixed top-0 left-0 w-8 h-8 bg-teal-400 rounded-full mix-blend-difference pointer-events-none z-[100] -translate-x-1/2 -translate-y-1/2 transition-transform duration-100 ease-out"></div>
 		
 		<slot />
-
-		<footer class="mt-auto border-t border-zinc-900 bg-zinc-950/80 backdrop-blur-lg z-20 pt-20 pb-12 relative overflow-hidden">
-			<div class="absolute inset-0 bg-gradient-to-t from-teal-900/10 to-transparent pointer-events-none"></div>
-			<div class="max-w-4xl mx-auto px-6 text-center space-y-8 relative z-10">
-				<h3 class="text-4xl md:text-5xl font-bold text-white tracking-tight">Ready to scale your digital presence?</h3>
-				<p class="text-zinc-400 text-lg">Let's build something exceptional together.</p>
-				<div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-8">
-					<a href="mailto:aliha85234@gmail.com" class="magnetic-btn inline-flex items-center justify-center px-8 py-4 bg-white text-zinc-950 font-bold rounded-full hover:bg-zinc-200 transition-colors w-full sm:w-auto">
-						Start a Project
-					</a>
-					<a href="https://github.com/logsaviour" target="_blank" rel="noreferrer" class="magnetic-btn inline-flex items-center justify-center px-8 py-4 border border-zinc-800 text-white font-bold rounded-full hover:bg-zinc-900 hover:border-zinc-700 transition-colors w-full sm:w-auto">
-						View GitHub
-					</a>
-				</div>
-				<div class="pt-16 text-sm text-zinc-600 flex justify-between items-center border-t border-zinc-900/50 mt-12">
-					<p>© {new Date().getFullYear()} Ali Hassan. All rights reserved.</p>
-					<div class="flex gap-4">
-						<span class="flex h-2 w-2 mt-1.5 relative">
-							<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-							<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-						</span>
-						Available for work
-					</div>
-				</div>
-			</div>
-		</footer>
-
-		<script>
-			import { gsap } from 'gsap';
-
-			// Re-initialize logic on every page transition
-			document.addEventListener('astro:page-load', () => {
-				
-				// Magnetic Button Micro-interaction
-				const magneticBtns = document.querySelectorAll('.magnetic-btn');
-				
-				magneticBtns.forEach(btn => {
-					btn.addEventListener('mousemove', (e: any) => {
-						const rect = btn.getBoundingClientRect();
-						const x = e.clientX - rect.left - rect.width / 2;
-						const y = e.clientY - rect.top - rect.height / 2;
-						
-						gsap.to(btn, { 
-							x: x * 0.3, 
-							y: y * 0.3, 
-							duration: 0.4, 
-							ease: "power2.out" 
-						});
-					});
-					
-					btn.addEventListener('mouseleave', () => {
-						gsap.to(btn, { 
-							x: 0, 
-							y: 0, 
-							duration: 0.7, 
-							ease: "elastic.out(1, 0.3)" 
-						});
-					});
-				});
-			});
-		</script>
 	</body>
 </html>
+
+<script>
+	import { gsap } from 'gsap';
+
+	// Custom Cursor Logic
+	const cursor = document.getElementById('custom-cursor');
+	
+	// Track mouse movement
+	window.addEventListener('mousemove', (e) => {
+		gsap.to(cursor, {
+			x: e.clientX,
+			y: e.clientY,
+			duration: 0.15,
+			ease: 'power2.out'
+		});
+	});
+
+	// Hover effect for interactive elements (links, buttons)
+	const interactables = document.querySelectorAll('a, button');
+	interactables.forEach(el => {
+		el.addEventListener('mouseenter', () => {
+			gsap.to(cursor, { scale: 1.5, backgroundColor: '#ffffff', duration: 0.2 });
+		});
+		el.addEventListener('mouseleave', () => {
+			gsap.to(cursor, { scale: 1, backgroundColor: '#2dd4bf', duration: 0.2 });
+		});
+	});
+</script>
+
+<style is:global>
+	/* Hide default cursor on interactive elements since we have a custom one */
+	a, button { cursor: none; }
+	
+	::-webkit-scrollbar { width: 8px; }
+	::-webkit-scrollbar-track { background: #09090b; }
+	::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+	::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+</style>
