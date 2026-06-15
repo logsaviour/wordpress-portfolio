@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
 
 interface Props {
 	title: string;
@@ -19,14 +19,12 @@ const { title, description } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		
-		<!-- Enables Seamless SPA Routing -->
-		<ViewTransitions />
+		<ClientRouter />
 	</head>
 	<body class="antialiased min-h-screen flex flex-col">
 		
 		<slot />
 
-		<!-- Global Footer & CTA -->
 		<footer class="mt-auto border-t border-zinc-900 bg-zinc-950/80 backdrop-blur-lg z-20 pt-20 pb-12 relative overflow-hidden">
 			<div class="absolute inset-0 bg-gradient-to-t from-teal-900/10 to-transparent pointer-events-none"></div>
 			<div class="max-w-4xl mx-auto px-6 text-center space-y-8 relative z-10">
