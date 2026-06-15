@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import InteractiveLogo from '../components/InteractiveLogo';
 import ScrollSection from '../components/ScrollSection.astro';
-import { LayoutPanel, MousePointerClick, Gauge, ArrowLeft, ArrowUpRight, Mail } from 'lucide-react';
+import { LayoutTemplate, MousePointerClick, Gauge, ArrowLeft, ArrowUpRight, Mail } from 'lucide-react';
 ---
 
 <Layout 
@@ -63,7 +63,7 @@ import { LayoutPanel, MousePointerClick, Gauge, ArrowLeft, ArrowUpRight, Mail } 
 	<ScrollSection id="features" className="bg-transparent border-b border-zinc-900 z-10">
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 			<div class="p-8 border border-zinc-900 bg-zinc-950/80 backdrop-blur-md rounded-2xl space-y-4 hover:border-rose-500/50 transition-colors">
-				<LayoutPanel class="w-8 h-8 text-rose-400" />
+				<LayoutTemplate class="w-8 h-8 text-rose-400" />
 				<h3 class="text-xl font-semibold text-white">Rapid Deployment</h3>
 				<p class="text-zinc-400 text-sm leading-relaxed">Accelerated build cycles utilizing Elementor's global design system, taking you from concept to live marketing asset in record time.</p>
 			</div>
